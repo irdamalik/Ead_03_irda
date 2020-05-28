@@ -1,2 +1,9 @@
 This is a website with basic functionality of add, update and display.
-This is about the list of Tv-series and movies which are stored in database. 
+This website is about displaying a list of Tv-series and movies which are stored in database.
+A user can update the list and add new movies and tv-series to the list.
+There's an interface which has two buttons(for movies and tv-series), on clicking show movies button the list of available movies in 
+database will be displayed and same goes for tv-series.
+Then an option for add new movies is present at the bottom of the list. User can add new movie and provide information related to it. 
+After adding it the page will be redirected to show movies page.
+Same procedure is for Tv-series.
+Lastly a user can update items like a user can eidt movie name, director, producer or available on options.
