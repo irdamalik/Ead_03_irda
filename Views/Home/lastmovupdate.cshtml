@@ -1,0 +1,86 @@
+﻿@model List<tvseriesproject1.Models.movie>
+@{
+    ViewBag.Title = "lastmovupdates";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td 
+        {
+            border: 2px solid black;
+        }
+
+        form {
+            width: 40%;
+        }
+
+        input[type=text], input[type=password], input[type=email] {
+            width: 60%;
+            padding: 12px 18px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 3px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3C3232;
+            color: white;
+            padding: 12px 18px;
+            margin: 5px 0;
+            border: none;
+            cursor: pointer;
+            width: 60%;
+        }
+    </style>
+</head>
+<body style="background-color: #F5DEB3;">
+    @if (Model.Count <= 0)
+    {
+        <h2 style="color:black">Movies arn't available for you.</h2>
+    }
+    else
+    {
+        <h2 class="form-title" style="color:black">Movies</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="column1"></th>
+                    <th class="column1">Name</th>
+                    <th class="column2">Genre</th>
+                    <th class="column3">Director</th>
+                    <th class="column4">Producer</th>
+                    <th class="column8">Available on</th>
+                </tr>
+            </thead>
+            @foreach (var mo in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td class="column1">@mo.Id</td>
+                        <td class="column1">@mo.namee</td>
+                        <td class="column2">@mo.genree</td>
+                        <td class="column3">@mo.directorr</td>
+                        <td class="column4">@mo.producerr</td>
+                        <td class="column4">@mo.available_onn</td>
+                        <td class="column1">
+                            <form action="updatemovies" method="post">
+                                <input type="hidden" name="Id" value="@mo.Id" />
+                                <input type="submit" value="Update"><br><br>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    }
+    <br />
+    <br />
+    <form method="post" action="Index">
+        <input type="submit" value="Home"><br><br>
+    </form>
+</body>
+</html>
+

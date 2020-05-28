@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "add";
+}
+<!DOCTYPE html>
+
+<html>
+<style>
+    form {
+        width: 30%;
+    }
+
+    input[type=text], input[type=password], input[type=email] {
+        width: 60%;
+        padding: 12px 18px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #3C3232;
+        color: white;
+        padding: 12px 18px;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        width: 60%;
+    }
+</style>
+<body style="background-color: #F5DEB3;">
+    <div align=center>
+
+        <h2> Add TV-series..</h2>
+        <br>
+        <form name=myForm method="post" action="add">
+            <fieldset>
+                Tv-series Title:<input type="text" name="name" placeholder="Tv-series Title" required /><br>
+                Genre:<input type="text" name="genre" placeholder="Genre" required /><br>
+                Director:<input type="text" name="director" placeholder="Director" required /><br>
+                Writer:<input type="text" name="writer" placeholder="Writer" required /><br>
+                Available_on :<input type="text" name="available_on" placeholder="Available on...." required /><br>
+                <button type="submit">Add!</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
+

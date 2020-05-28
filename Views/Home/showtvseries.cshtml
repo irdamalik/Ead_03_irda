@@ -1,0 +1,85 @@
+﻿@model List<tvseriesproject1.Models.tvseries>
+@{
+    ViewBag.Title = "showtvseries";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td 
+        {
+            border: 2px solid black;
+        }
+
+        form {
+            width: 30%;
+        }
+
+        button {
+            background-color: #3C3232;
+            color: white;
+            padding: 12px 18px;
+            margin: 5px 0;
+            border: none;
+            cursor: pointer;
+            width: 60%;
+        }
+    </style>
+</head>
+<body style="background-color: #F5DEB3;">
+    <div align=center>
+        <h2>showing TV-series</h2>
+        @if (Model.Count <= 0)
+        {
+            <h2 style="color:black">No tv-series are here for you.</h2>
+        }
+        else
+        {
+            <h2 class="form-title" style="color:black">Tv-series</h2>
+            <table style="width:60%">
+                <thead>
+                    <tr>
+                        <th class="column1" align="center">Id</th>
+                        <th class="column1" align="center">Name</th>
+                        <th class="column2" align="center">Genre</th>
+                        <th class="column3" align="center">Director</th>
+                        <th class="column4" align="center">Writer</th>
+                        <th class="column8" align="center">Available on</th>
+                        <th class="column8" align="center">Click for update</th>
+                    </tr>
+                </thead>
+                @foreach (var tvs in Model)
+                {
+                    <tbody>
+                        <tr>
+                            <td class="column1" align="center">@tvs.Id</td>
+                            <td class="column1" align="center">@tvs.name</td>
+                            <td class="column2" align="center">@tvs.genre</td>
+                            <td class="column3" align="center">@tvs.director</td>
+                            <td class="column4" align="center">@tvs.writer</td>
+                            <td class="column4" align="center">@tvs.available_on</td>
+                            <td class="column1" align="center">
+                                <form action="doupdation" method="post">
+                                    <input type="hidden" name="Id" value="@tvs.Id" />
+                                    <input type="submit" value="Update" />
+                                </form>
+</tr>
+                    </tbody>
+                }
+            </table>
+        }
+        <br />
+        <br />
+
+        <fieldset>
+            <form method="post" action="addtvseries">
+                <button type="submit">Add Tv-series</button><br><br>
+            </form>
+            <br />
+            <form method="post" action="Index">
+                <button type="submit">Return to Home</button>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>

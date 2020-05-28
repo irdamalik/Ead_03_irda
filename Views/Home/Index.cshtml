@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>TV-series/Movies Recommendation</h1>
+
+</div>
+<!DOCTYPE html>
+<html>
+<style>
+    form {
+        width: 30%;
+    }
+
+    button {
+        background-color: #3C3232;
+        color: white;
+        padding: 12px 18px;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        width: 60%;
+    }
+</style>
+<body style="background-color: #F5DEB3;">
+    <div align=center>
+
+        <fieldset>
+            <p>Click here to see the list of Tv-series</p>
+            <form method="post" action="showtvseries">
+                <button type="submit">Show TV-series</button><br><br>
+            </form>
+            <p>Click here to see the list of movies</p>
+            <form method="post" action="showmovies">
+                <button type="submit">Show Movies</button><br><br>
+            </form>
+
+        </fieldset>
+    </div>
+</body>
+
+</html>

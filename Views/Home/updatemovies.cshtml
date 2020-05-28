@@ -1,0 +1,52 @@
+﻿@model List<tvseriesproject1.Models.movie>
+@{
+    ViewBag.Title = "updatemovies";
+}
+<html>
+<style>
+    form {
+        width: 30%;
+    }
+
+    input[type=text], input[type=password], input[type=email] {
+        width: 60%;
+        padding: 12px 18px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #3C3232;
+        color: white;
+        padding: 12px 18px;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        width: 60%;
+    }
+</style>
+<body style="background-color: #F5DEB3;">
+    <div align=center>
+        @foreach (var moup in Model)
+        {
+
+
+            <form method="post" action="lastmovupdate">
+                <h2 class="form-title">Update Movie</h2>
+                <input type="hidden" name="id" value="@moup.Id" />
+
+                Title:<input type="text" class="form-input" id="movname" name="movname" value="@moup.namee" required /><br />
+                Genre: <input type="text" class="form-input" name="movgenre" id="dcity" value="@moup.genree" required /><br />
+                Director:<input type="text" class="form-input" name="movdirector" id="destination" value="@moup.directorr" required /><br />
+                Producer:<input type="text" class="form-input" name="movproducer" id="destination" value="@moup.producerr" required /><br />
+                Available_on:<input type="text" class="form-input" name="movavailable_on" id="destination" value="@moup.available_onn" required /><br />
+                <button type="submit">Update!</button>
+
+            </form>
+
+        }
+    </div>
+</body>
+</html>

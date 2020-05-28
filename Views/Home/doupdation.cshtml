@@ -1,0 +1,52 @@
+﻿@model List<tvseriesproject1.Models.tvseries>
+@{
+    ViewBag.Title = "doupdation";
+}
+<html>
+<style>
+    form {
+        width: 30%;
+    }
+
+    input[type=text], input[type=password], input[type=email] {
+        width: 60%;
+        padding: 12px 18px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 3px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #3C3232;
+        color: white;
+        padding: 12px 18px;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        width: 60%;
+    }
+</style>
+<body style="background-color: #F5DEB3;">
+    <div align=center>
+        @foreach (var up in Model)
+        {
+
+
+            <form method="post" action="finalupdate">
+                <h2 class="form-title">Update Tv-series</h2>
+                <input type="hidden" name="id" value="@up.Id" />
+
+                Title:<input type="text" class="form-input" id="tvname" name="tvname" value="@up.name" required /><br />
+                Genre: <input type="text" class="form-input" name="tvgenre" id="dcity" value="@up.genre" required /><br />
+                Director:<input type="text" class="form-input" name="tvdirector" id="destination" value="@up.director" required /><br />
+                Writer:<input type="text" class="form-input" name="tvwriter" id="destination" value="@up.writer" required /><br />
+                Available_on:<input type="text" class="form-input" name="tvavailable_on" id="destination" value="@up.available_on" required /><br />
+                <button type="submit">Update!</button>
+
+            </form>
+
+        }
+    </div>
+</body>
+</html>
